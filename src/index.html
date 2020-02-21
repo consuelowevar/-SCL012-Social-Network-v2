@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Viviendo Chile</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
 
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
 
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  //CLAVE DE ACCESO A CONSOLA FIREBASE
-  // Your web app's Firebase configuration
-
+  <script>
+  // Your web app's Firebase configuration // CLAVE DE ACCESO A CONSOLA FIREBASE
   const firebaseConfig = {
     apiKey: "AIzaSyDkST3g1IHx7iegmHvvDnDTA7zkyXHLz54",
     authDomain: "red-social-2-104d9.firebaseapp.com",
@@ -31,24 +28,37 @@
     messagingSenderId: "309842319422",
     appId: "1:309842319422:web:5661b3d46036469559d96f"
   };
-  
-  //INICIALIZACION DE FIREBASE
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-</script>
+  </script>
+
+  <div id="loginForm">
+
+  </div>
+
+  <section id="postSection">
+    <form id="signupForm">
+      <h2>REGISTRO NUEVO USUARIO</h2>
+      <input type="name" class="inputLog" id="nameRegister" placeholder="Nombre">
+      <input type="email" class="inputLog" id="emailRegister" placeholder="Email">
+      <input type="password" class="inputLog" id="passRegister" placeholder="Contraseña">
+      
+      <button type="button" class="buttonLog" id="buttonRegister">Registrarme</button>
+      <button type="button" class="buttonLog" id="buttonLogin2">Iniciar Sesión</button>
+      </form>
 
 
-  <section id="root">
-    <div >
-      <input type="name" id="loginName" class="inputLog">
-      <input type="email" id="loginEmail" class="inputLog">
-      <input type="password" id="loginPassword" class="inputLog">
-      <button id="registerBttn" class="loginBttn">registrar</button>
+    <div id="printPost"></div>
+  
 
-    </div>
   </section>
+    
 
 
+
+  
+
+  <!-- <script type="module" src="main.js"></script>  -->
   <script type="module" src="main.js"></script> 
 
 
