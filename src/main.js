@@ -1,19 +1,21 @@
 //      REGISTRO USUARIO NUEVO  
 const loginForm = document.getElementById('loginForm');
-// loginForm.innerHTML = `
-// <form id="signupForm">
-// <h2>REGISTRO NUEVO USUARIO</h2>
-// <input type="name" class="inputLog" id="nameRegister" placeholder="Nombre">
-// <input type="email" class="inputLog" id="emailRegister" placeholder="Email">
-// <input type="password" class="inputLog" id="passRegister" placeholder="Contraseña">
+// function loginView () {
+loginForm.innerHTML = `
+<form id="signupForm">
+<h2>REGISTRO NUEVO USUARIO</h2>
+<input type="name" class="inputLog" id="nameRegister" placeholder="Nombre">
+<input type="email" class="inputLog" id="emailRegister" placeholder="Email">
+<input type="password" class="inputLog" id="passRegister" placeholder="Contraseña">
 
-// <button type="button" class="buttonLog" id="buttonRegister">Registrarme</button>
-// <button type="button" class="buttonLog" id="buttonLogin2">Iniciar Sesión</button>
-// </form>
-// `;
-
+<button type="button" class="buttonLog" id="buttonRegister">Registrarme</button>
+<button type="button" class="buttonLog" id="buttonLogin2">Iniciar Sesión</button>
+</form>
+`
 document.getElementById('buttonRegister').addEventListener('click',createUser);
 document.getElementById('buttonLogin2').addEventListener('click', loginUser);
+// }
+
 
 function createUser() {
     const emailRegister = document.getElementById('emailRegister').value;
@@ -90,8 +92,8 @@ function loginUser(){
   </form> 
     `
     document.getElementById('buttonLogin').addEventListener('click', loginAuth, postView );
-    document.getElementById('buttonGoogle').addEventListener('click',loginGoogle);
-    
+    document.getElementById('buttonGoogle').addEventListener('click', loginGoogle);
+}    
     function loginAuth (){
         const emailLogin = document.getElementById('emailLogin').value;
         const passwordLogin = document.getElementById('passwordLogin').value;
@@ -112,7 +114,7 @@ function loginUser(){
         console.log(errorCode);
         console.log(errorMessage);
     });
- }
+}
 
  function loginGoogle (){
     
@@ -133,8 +135,8 @@ function loginUser(){
         var credential = error.credential;
         // ...
       });
- }
 }
+
 
 function observador () {
      firebase.auth().onAuthStateChanged(function(user) {
@@ -187,7 +189,7 @@ const post = document.getElementById('post').value;
 }
 
 
-let printPost  = document.getElementById('printPost');
+const post = document.getElementById('printPost');
 db.collection("posts").onSnapshot((querySnapshot) => {
     printPost.innerHTML = '';
     querySnapshot.forEach((doc) => {
